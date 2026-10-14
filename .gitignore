@@ -1,0 +1,15 @@
+# 系统与编辑器产生的垃圾文件
+.DS_Store
+*~
+*.swp
+*.swo
+
+# AI 助手工具自动生成的目录
+.agents/
+.aws/
+.codex/
+
+# 临时文件
+*.tmp
+*.log
+
