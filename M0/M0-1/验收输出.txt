@@ -1,0 +1,66 @@
+==============================================================
+  M0-1 开发环境验收  (2026-10-14 22:56:06)
+==============================================================
+
+--- 1. 操作系统 ---
+       发行版: Ubuntu 22.04.5 LTS
+[PASS] Ubuntu 22.04
+
+--- 2. 运行形态（物理机 / WSL2 / 虚拟机 三选一） ---
+[PASS] 运行在物理机
+
+--- 3. 系统信息 ---
+       内核: 6.8.0-138-generic
+       架构: x86_64
+
+--- 4. Shell 与基础工具 ---
+[PASS] bash -> /usr/bin/bash
+[PASS] git -> /usr/bin/git
+[PASS] gcc -> /usr/bin/gcc
+[PASS] g++ -> /usr/bin/g++
+[PASS] make -> /usr/bin/make
+[PASS] cmake -> /usr/bin/cmake
+
+--- 5. Python 环境 ---
+[PASS] python3: Python 3.14.7 (/home/yuki/miniconda3/bin/python3)
+[PASS] Python 版本 >= 3.10
+[PASS] pip 可用: pip 26.2.1
+
+--- 6. Python 虚拟环境 (uv 或 conda) ---
+[PASS] conda: conda 26.7.1
+[PASS] 当前处于虚拟环境: /home/yuki/miniconda3
+
+--- 7. ROS2 Humble ---
+[PASS] 发现 /opt/ros/humble/setup.bash
+[PASS] source 后 ros2 命令可用
+       ros2: unknown
+[PASS] 已将 ROS 环境写入 shell 配置
+
+--- 8. Git 配置 ---
+[PASS] user.name = yuki
+[PASS] user.email = liyuxiliyuxi070212@gmail.com
+       最近一次提交签名: yuki <liyuxiliyuxi070212@gmail.com>
+
+--- 9. VS Code ---
+[PASS] code: 1.140.0
+[WARN] 无法列出插件（headless 环境属正常）
+
+--- 10. 远程登录能力 ---
+[PASS] ssh 可用
+[PASS] scp 可用
+[PASS] ssh-keygen 可用
+[PASS] rsync 可用
+[PASS] 已生成 SSH 公钥
+[PASS] ~/.ssh/known_hosts 非空（有连接过远程主机的痕迹）
+
+--- 11. 仓库结构 ---
+[PASS] 发现 git 仓库: /media/yuki/外置硬盘/22SmartCar
+       提交总数: 3
+[PASS] 提交次数 >= 3（满足多次提交要求）
+[PASS] 存在按模块划分的目录（7 个）
+
+==============================================================
+  汇总: PASS=28  FAIL=0  WARN=1
+==============================================================
+  环境验收: 通过（WARN 项请现场向考官说明）
+  下一步: 登录开发板完成 M0-2
