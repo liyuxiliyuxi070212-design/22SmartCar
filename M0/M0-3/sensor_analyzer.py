@@ -65,8 +65,8 @@ output_path = OUTPUT_FILE
 f = open(output_path, "w")
 writer = csv.writer(f)
 writer.writerow(["time", "value"])
-for v in cleaned:
-    writer.writerow([v])
+for t, v in cleaned:
+    writer.writerow([t, v])
 
 print("均值 mean = %.4f" % mean)
 print("标准差 std = %.4f" % std)
