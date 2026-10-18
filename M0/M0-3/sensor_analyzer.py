@@ -17,11 +17,9 @@ sensor_analyzer.py  —— 上一届学长留下的"能用"的脚本
 """
 
 import csv
-import os
 
 INPUT_FILE = "sensor_data.csv"
 OUTPUT_FILE = "cleaned_data.csv"
-OUTPUT_DIR = "out"  # 输出目录
 
 data = []
 times = []
@@ -58,7 +56,7 @@ for v in data:
         data.remove(v)
 
 # --- 输出清洗后的数据 ---
-output_path = os.path.join("/", OUTPUT_DIR, OUTPUT_FILE)
+output_path = OUTPUT_FILE
 f = open(output_path, "w")
 writer = csv.writer(f)
 writer.writerow(["time", "value"])
