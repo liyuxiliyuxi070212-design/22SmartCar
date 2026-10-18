@@ -58,6 +58,7 @@ for index, v in enumerate(data):
         kept_indices.append(index)
 times = [times[index] for index in kept_indices]
 data = [data[index] for index in kept_indices]
+cleaned = list(zip(times, data))
 
 # --- 输出清洗后的数据 ---
 output_path = OUTPUT_FILE
