@@ -42,7 +42,7 @@ for i in range(n):
     prod = prod + a * b
 
 denom = dx * dy
-r = prod / denom
+r = prod / math.sqrt(denom)
 
 print("n =", n)
 print("mean_x =", mean_x)
