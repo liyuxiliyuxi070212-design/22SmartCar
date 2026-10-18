@@ -34,7 +34,7 @@ reader = csv.DictReader(open(INPUT_FILE, "r"))
 
 for row in reader:
     t = float(row["time"])
-    v = float(row["Value"])
+    v = float(row["value"])
     times.append(t)
     data.append(v)
 
