@@ -1,6 +1,9 @@
-import yaml
+import argparse
 import csv
 import math
+import os
+
+import yaml
 
 CONFIG_PATH = "config.yaml"
 
@@ -33,10 +36,20 @@ def pearson_r(xs, ys):
 
 
 def main():
-    with open(CONFIG_PATH) as f:
+    parser = argparse.ArgumentParser(description="计算两列数据的皮尔逊相关系数")
+    parser.add_argument("--config", default=CONFIG_PATH, help="配置文件路径")
+    args = parser.parse_args()
+
+    with open(args.config) as f:
         cfg = yaml.safe_load(f)
 
     csv_path = cfg["input_csv"]
+    base_dir = os.path.dirname(os.path.abspath(args.config))
+    if not os.path.isabs(csv_path):
+        candidate = os.path.join(base_dir, csv_path)
+        if os.path.exists(candidate):
+            csv_path = candidate
+
     col_x = cfg["columns"]["x"]
     col_y = cfg["columns"]["y"]
 
